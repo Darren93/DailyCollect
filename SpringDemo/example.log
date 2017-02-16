@@ -1,0 +1,87 @@
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'simpleBrokerMessageHandler'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stompBrokerRelayMessageHandler'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'userDestinationMessageHandler'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'lifecycleProcessor'
+INFO main org.springframework.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Starting bean 'stompWebSocketHandlerMapping' of type [class org.springframework.web.socket.server.support.WebSocketHandlerMapping]
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Successfully started bean 'stompWebSocketHandlerMapping'
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Starting bean 'subProtocolWebSocketHandler' of type [class org.springframework.web.socket.messaging.SubProtocolWebSocketHandler]
+DEBUG main org.springframework.messaging.support.ExecutorSubscribableChannel - clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Successfully started bean 'subProtocolWebSocketHandler'
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Starting bean 'simpAnnotationMethodMessageHandler' of type [class org.springframework.web.socket.messaging.WebSocketAnnotationMethodMessageHandler]
+DEBUG main org.springframework.messaging.support.ExecutorSubscribableChannel - clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/send/]]
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Successfully started bean 'simpAnnotationMethodMessageHandler'
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Starting bean 'simpleBrokerMessageHandler' of type [class org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler]
+INFO main org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler - Starting...
+DEBUG main org.springframework.messaging.support.ExecutorSubscribableChannel - clientInboundChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+DEBUG main org.springframework.messaging.support.ExecutorSubscribableChannel - brokerChannel added SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+INFO main org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'sqlSessionFactory'
+INFO main org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler - Started.
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Successfully started bean 'simpleBrokerMessageHandler'
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Starting bean 'stompBrokerRelayMessageHandler' of type [class org.springframework.messaging.simp.config.AbstractMessageBrokerConfiguration$NoOpBrokerMessageHandler]
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Successfully started bean 'stompBrokerRelayMessageHandler'
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Starting bean 'userDestinationMessageHandler' of type [class org.springframework.messaging.simp.user.UserDestinationMessageHandler]
+DEBUG main org.springframework.messaging.support.ExecutorSubscribableChannel - clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+DEBUG main org.springframework.messaging.support.ExecutorSubscribableChannel - brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+DEBUG main org.springframework.context.support.DefaultLifecycleProcessor - Successfully started bean 'userDestinationMessageHandler'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'sqlSessionFactory'
+DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'com.darren.spring.test.TestMybatis': ResourceElement for private com.darren.spring.service.IPersonService com.darren.spring.test.TestMybatis.personService
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'personService'
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6273c5a4] was not registered for synchronization because synchronization is not active
+DEBUG main org.apache.ibatis.transaction.managed.ManagedTransaction - Opening JDBC Connection
+DEBUG main com.darren.spring.dao.PersonMapper.insert - ==>  Preparing: insert into person (id, username, gender, address, tel) values (?, ?, ?, ?, ?) 
+DEBUG main com.darren.spring.dao.PersonMapper.insert - ==> Parameters: null, 小赵3(String), 男3(String), 测试地址3(String), 13456789762(String)
+DEBUG main com.darren.spring.dao.PersonMapper.insert - <==    Updates: 1
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6273c5a4]
+DEBUG main org.apache.ibatis.transaction.managed.ManagedTransaction - Closing JDBC Connection [jdbc:mysql://127.0.0.1:3306/testdb?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL-AB JDBC Driver]
+DEBUG main org.springframework.test.context.junit4.SpringMethodRoadie - Test method [public void com.darren.spring.test.TestMybatis.testAdd()] threw exception: null
+DEBUG main org.springframework.test.context.support.DirtiesContextTestExecutionListener - After test method: context [[TestContext@3b6eb2ec testClass = TestMybatis, locations = array<String>['classpath:spring-mybatis.xml'], testInstance = com.darren.spring.test.TestMybatis@1e643faf, testMethod = testAdd@TestMybatis, testException = [null]]], dirtiesContext [false].
+INFO Thread-0 org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@5f2050f6: startup date [Thu Feb 16 10:48:47 CST 2017]; root of context hierarchy
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'sqlSessionFactory'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stompWebSocketHandlerMapping'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'subProtocolWebSocketHandler'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'simpAnnotationMethodMessageHandler'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'simpleBrokerMessageHandler'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stompBrokerRelayMessageHandler'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'userDestinationMessageHandler'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'lifecycleProcessor'
+INFO Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Asking bean 'stompWebSocketHandlerMapping' of type [class org.springframework.web.socket.server.support.WebSocketHandlerMapping] to stop
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Bean 'stompWebSocketHandlerMapping' completed its stop procedure
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Asking bean 'subProtocolWebSocketHandler' of type [class org.springframework.web.socket.messaging.SubProtocolWebSocketHandler] to stop
+DEBUG Thread-0 org.springframework.messaging.support.ExecutorSubscribableChannel - clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Bean 'subProtocolWebSocketHandler' completed its stop procedure
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Asking bean 'simpAnnotationMethodMessageHandler' of type [class org.springframework.web.socket.messaging.WebSocketAnnotationMethodMessageHandler] to stop
+DEBUG Thread-0 org.springframework.messaging.support.ExecutorSubscribableChannel - clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/send/]]
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Bean 'simpAnnotationMethodMessageHandler' completed its stop procedure
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Asking bean 'simpleBrokerMessageHandler' of type [class org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler] to stop
+INFO Thread-0 org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler - Stopping...
+INFO Thread-0 org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+DEBUG Thread-0 org.springframework.messaging.support.ExecutorSubscribableChannel - clientInboundChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+DEBUG Thread-0 org.springframework.messaging.support.ExecutorSubscribableChannel - brokerChannel removed SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]
+INFO Thread-0 org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler - Stopped.
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Bean 'simpleBrokerMessageHandler' completed its stop procedure
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Asking bean 'userDestinationMessageHandler' of type [class org.springframework.messaging.simp.user.UserDestinationMessageHandler] to stop
+DEBUG Thread-0 org.springframework.messaging.support.ExecutorSubscribableChannel - clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+DEBUG Thread-0 org.springframework.messaging.support.ExecutorSubscribableChannel - brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+DEBUG Thread-0 org.springframework.context.support.DefaultLifecycleProcessor - Bean 'userDestinationMessageHandler' completed its stop procedure
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f2f2cc1: defining beans [socketController,testController,personService,webSocketConfig,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping,mvcCorsConfigurations,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter,mvcUriComponentsContributor,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,propertyConfigurer,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,org.springframework.web.socket.config.annotation.DelegatingWebSocketMessageBrokerConfiguration,stompWebSocketHandlerMapping,subProtocolWebSocketHandler,webSocketScopeConfigurer,webSocketMessageBrokerStats,clientInboundChannel,clientInboundChannelExecutor,clientOutboundChannel,clientOutboundChannelExecutor,brokerChannel,brokerChannelExecutor,simpAnnotationMethodMessageHandler,simpleBrokerMessageHandler,stompBrokerRelayMessageHandler,userDestinationMessageHandler,userRegistryMessageHandler,messageBrokerTaskScheduler,brokerMessagingTemplate,brokerMessageConverter,userDestinationResolver,userRegistry,personDao,personMapper,IRedisPersonDao]; root of factory hierarchy
+DEBUG Thread-0 org.springframework.beans.factory.support.DisposableBeanAdapter - Invoking destroy() on bean with name 'brokerChannelExecutor'
+INFO Thread-0 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor'
+DEBUG Thread-0 org.springframework.beans.factory.support.DisposableBeanAdapter - Invoking destroy() on bean with name 'messageBrokerTaskScheduler'
+INFO Thread-0 org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler'
+DEBUG Thread-0 org.springframework.beans.factory.support.DisposableBeanAdapter - Invoking destroy() on bean with name 'clientOutboundChannelExecutor'
+INFO Thread-0 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor'
+DEBUG Thread-0 org.springframework.beans.factory.support.DisposableBeanAdapter - Invoking destroy() on bean with name 'clientInboundChannelExecutor'
+INFO Thread-0 org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor'
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Retrieved dependent beans for bean 'sqlSessionFactory': [personMapper, personDao, IRedisPersonDao]
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Retrieved dependent beans for bean 'personMapper': [personService]
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Retrieved dependent beans for bean 'personService': [com.darren.spring.test.TestMybatis]
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Retrieved dependent beans for bean 'org.apache.ibatis.transaction.managed.ManagedTransactionFactory#6646153': [sqlSessionFactory]
+DEBUG Thread-0 org.springframework.beans.factory.support.DefaultListableBeanFactory - Retrieved dependent beans for bean 'dataSource': [transactionManager]
+DEBUG Thread-0 org.springframework.beans.factory.support.DisposableBeanAdapter - Invoking destroy method 'close' on bean with name 'dataSource'
