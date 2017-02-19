@@ -10,7 +10,8 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd
           http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-     <context:property-placeholder location="classpath:redis.properties"/>
+       <context:component-scan base-package="com.darren.spring.controller"></context:component-scan>
+       <mvc:annotation-driven />
 	<mvc:default-servlet-handler />
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"></mvc:resources>
 	<bean
@@ -18,21 +19,4 @@
 		<property name="prefix" value="/WEB-INF/"></property>
 		<property name="suffix" value=".html"></property>
 	</bean>
-	
-	 <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">  
-        <property name="maxIdle" value="${redis.maxIdle}" />  
-        <property name="maxTotal" value="${redis.maxTotal}" />  
-        <property name="minIdle" value="${redis.minIdle}" />  
-    </bean>  
-      
-     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-     	<property name="hostName" value="${redis.host}" />
-     	<property name="port" value="${redis.port}" />
-     	<property name="password" value="${redis.pass}" />
-     	<property name="poolConfig" ref="poolConfig" />
-     </bean> 
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">  
-        <property name="connectionFactory"   ref="connectionFactory" />  
-    </bean>     
-	<bean id="redisPersonDao" class="com.darren.spring.dao.redis.impl.IRedisPersonDaoImpl"></bean>
 </beans>

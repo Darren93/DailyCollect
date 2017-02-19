@@ -2,8 +2,10 @@ package com.darren.spring.dao;
 
 import java.util.List;
 
-import com.darren.spring.entity.Person;
+import org.springframework.stereotype.Repository;
 
+import com.darren.spring.entity.Person;
+@Repository("personMapper")
 public interface PersonMapper {
     int deleteByPrimaryKey(Integer id);
     int insert(Person record);

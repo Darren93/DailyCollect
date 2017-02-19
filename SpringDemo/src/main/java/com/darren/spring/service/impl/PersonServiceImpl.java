@@ -16,7 +16,7 @@ import com.github.pagehelper.PageInfo;
 @Transactional
 @Service("personService")
 public class PersonServiceImpl implements IPersonService {
-	@Resource
+	@Resource(name="personMapper")
 	private PersonMapper personMapper;
 	public boolean add(Person person) {
 		// TODO Auto-generated method stub

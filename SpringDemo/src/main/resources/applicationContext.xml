@@ -20,5 +20,36 @@
     http://www.springframework.org/schema/websocket
     http://www.springframework.org/schema/websocket/spring-websocket.xsd
     ">  
+   <context:component-scan base-package="com.darren.*" >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	</context:component-scan>
 
+	
+    <!-- mybatis配置 -->
+    <bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:redis.properties</value>
+			</list>
+		</property>
+	</bean>
+    <!-- redis配置 -->
+ 	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">  
+        <property name="maxIdle" value="${redis.maxIdle}" />  
+        <property name="maxTotal" value="${redis.maxTotal}" />  
+        <property name="minIdle" value="${redis.minIdle}" />  
+    </bean>  
+      
+     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+     	<property name="hostName" value="${redis.host}" />
+     	<property name="port" value="${redis.port}" />
+     	<property name="password" value="${redis.pass}" />
+     	<property name="poolConfig" ref="poolConfig" />
+     </bean> 
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">  
+        <property name="connectionFactory"   ref="connectionFactory" />  
+    </bean>     
+	<bean id="redisPersonDao" class="com.darren.spring.dao.redis.impl.IRedisPersonDaoImpl"></bean>
     </beans>
